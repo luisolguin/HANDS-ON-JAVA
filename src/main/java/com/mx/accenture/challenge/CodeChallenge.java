@@ -34,9 +34,25 @@ import java.util.ArrayList;
 
 public class CodeChallenge {
     public Integer[]  resolve(Integer[] numbers, Integer target){
-        Integer[] solution = new Integer[0];
-        //TODO Implement your solution here.
+    	if(numbers.length==0) {
+    		return null;
+    	}
+        //Integer[] solution = new Integer[numbers.length];
+        ArrayList<Integer> result = new ArrayList<Integer>();
+        for (int i = 0; i < numbers.length; i++) {
+          int currentSum = 0;
+          result.clear();
+          for (int j = i; j < numbers.length; j++) {
+            currentSum += numbers[j];
+            result.add(numbers[j]);
+            if (currentSum == target) {
+            	//solution=(Integer[]) result.toArray();
+              return result.size()>1?result.toArray(new Integer[result.size()]):null;
+            }
+          }
+        }
+        return null;
 
-        return solution;
     }
+
 }

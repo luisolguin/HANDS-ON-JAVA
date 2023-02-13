@@ -20,7 +20,7 @@ public class CodeChallengeTest {
         target = 18;
         expected = new Integer[]{7, 11};
 
-        assertArrayEquals(expected, cc.resolve(numbers, target));
+        assertArrayEquals(expected,  cc.resolve(numbers, target));
     }
 
     @Test
